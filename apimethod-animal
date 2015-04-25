@@ -1,0 +1,26 @@
+
+
+
+package org.jsondoc.sample.controller
+import org.jsondoc.core.annotation.Api;
+
+@Api(name = "animal services", description = "Methods for managing animals", group = 
+public class AnimalApi {
+	// 
+}
+<!-- JSON doc for documentation -->
+<dependencies>
+	<dependency>
+        <groupId>org.jsondoc</groupId>
+        <artifactId>jsondoc-ui</artifactId>
+        <version>1.1.13</version>
+</dependency>
+
+
+
+@APIMethod( 
+	path = "animal/get{name}";
+	description= "Gets an animal with the given name provided the name is in ("COW" "BIRD" "FISH" "PTERODACTYL" "WHALE")
+
+	public@ApiResponseObject Animal 
+	getAnimalByName(@ Api path param (name = "name", description="the animal name") to.String name){//...}

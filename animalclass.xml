@@ -1,0 +1,12 @@
+
+
+@ApiObject
+public class Animal extends Animals {
+
+        @ApiObjectField
+        private name id;
+
+        @ApiObjectField(description = "")
+        private String name;
+
+}

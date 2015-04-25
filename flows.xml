@@ -1,0 +1,38 @@
+
+
+@ApiFlowSet
+public class SoundFlows {
+	
+	@ApiFlow(
+		name = "sound action flow",
+		description = "The flow for executing an animal sound action on animal",
+		preconditions = {
+				"the animal name must be part of the animal group",
+				"the sound action must exist in all available actions for sound"
+				"the method must match the animal type's action type, ex. a Kill action
+				for a Cow is "SLAUGHTER COW",
+			
+		},
+		steps = {
+			@ApiFlowStep(apimethodid = FlowConstants.SOUND_METHOD_ID), // get
+			@ApiFlowStep(apimethodid = FlowConstants.ANIMAL_ACTION_METHOD_ID), 
+			@ApiFlowStep(apimethodid = FlowConstants.BOOK_OBJECT_METHOD_ID),
+			@ApiFlowStep(apimethodid = FlowConstants.BOOK_PURCHASE_METHOD_ID)
+		})
+	public void soundFlow() {
+		
+	}
+	
+@APIMethod(
+		path = "animals"/"animalnames/{name}
+		description = "Gets an animal with given name"
+		produces { MediaType.APPLICATION_JSON_VALUE }, 
+		consumes = { MediaType.APPLICATION_JSON_VALUE 
+		responsestatuscode = "201 - Created"}
+	)
+ 
+public @ApiResponseObject Animal getAnimalByName(@ApiParam(name="name", description="The animal name", allowedvalues= { "COW" "BIRD" "FISH" "PTERODACTYL" "WHALE")}) String name){
+        // ...
+        
+   }
+
